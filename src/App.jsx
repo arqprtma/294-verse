@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/next';
+
 import { 
   Calendar, 
   MapPin, 
@@ -288,7 +290,7 @@ export default function App() {
           © 2026 294 VERSE FESTIVAL. ALL RIGHTS RESERVED.
         </div>
       </footer>
-
+      <Analytics />
     </div>
   );
 }
