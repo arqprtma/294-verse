@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Kustomisasi Skema Warna & Utilities */
+@theme {
+  --color-brand-yellow: #F5C518;
+  --color-brand-cyan: #20C9D9;
+  --color-brand-pink: #FF4081;
+  --color-brand-cream: #FFF5E4;
+  --color-brand-dark: #1E1E1E;
+  --color-brand-accent: #231F20;
+}
+
+body {
+  background-color: #FFF5E4;
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Class Styles */
+.pop-text {
+  text-shadow: 3px 3px 0px #1E1E1E;
+}
+
+.pop-card {
+  border: 3px solid #1E1E1E;
+  box-shadow: 5px 5px 0px #1E1E1E;
+  transition: all 0.2s ease-in-out;
+}
+
+.pop-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #1E1E1E;
+}
+
+.pop-button {
+  border: 3px solid #1E1E1E;
+  box-shadow: 4px 4px 0px #1E1E1E;
+  font-weight: bold;
+  transition: all 0.15s ease;
+}
+
+.pop-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #1E1E1E;
+}
+
+.pop-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #1E1E1E;
+}
