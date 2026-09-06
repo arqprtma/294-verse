@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-brand-pink selection:text-white">
-      
+      <Analytics />
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-brand-yellow border-b-4 border-brand-dark px-4 py-3">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
