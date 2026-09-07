@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Analytics } from '@vercel/analytics/react';
+import { inject } from '@vercel/analytics';
 import { 
   Calendar, 
   MapPin, 
@@ -7,23 +7,29 @@ import {
   Disc, 
   Menu, 
   X,
-  Volume2
+  Volume2,
+  Users,
+  Trophy,
+  Flame,
+  CheckCircle2
 } from 'lucide-react';
-import { festivalInfo, lineUpData, scheduleData, ticketData } from './data/festivalData';
+import { festivalInfo, lineUpData, scheduleData, ticketData, previousEvents, campaignData } from './data/festivalData';
+
+// Inisialisasi Vercel Analytics agar aman untuk Vite (mencegah error build)
+inject();
 
 export default function App() {
   const [filterDay, setFilterDay] = useState('All');
   const [activeTabSchedule, setActiveTabSchedule] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  // Filter Lineup berdasarkan Hari
+  // Filter Lineup berdasarkan Kategori
   const filteredLineup = filterDay === 'All' 
     ? lineUpData 
     : lineUpData.filter(item => item.day === filterDay);
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-brand-pink selection:text-white">
-      <Analytics />
+    <div className="min-h-screen flex flex-col selection:bg-brand-pink selection:text-white bg-brand-cream">
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-brand-yellow border-b-4 border-brand-dark px-4 py-3">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -35,10 +41,11 @@ export default function App() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 font-bold uppercase text-sm tracking-wide">
+            <a href="#about" className="hover:text-brand-pink transition-colors">Tentang Kami</a>
             <a href="#lineup" className="hover:text-brand-pink transition-colors">Line Up</a>
             <a href="#schedule" className="hover:text-brand-pink transition-colors">Jadwal</a>
+            <a href="#history" className="hover:text-brand-pink transition-colors">Galeri</a>
             <a href="#tickets" className="hover:text-brand-pink transition-colors">Tiket</a>
-            <a href="#venue" className="hover:text-brand-pink transition-colors">Lokasi</a>
             <a href="#tickets" className="pop-button bg-brand-cyan px-4 py-2 text-brand-dark uppercase">Beli Tiket</a>
           </div>
 
@@ -54,10 +61,11 @@ export default function App() {
         {/* Mobile Dropdown */}
         {isNavOpen && (
           <div className="md:hidden mt-3 p-4 bg-brand-cream border-2 border-brand-dark flex flex-col gap-3 font-bold uppercase">
+            <a href="#about" onClick={() => setIsNavOpen(false)}>Tentang Kami</a>
             <a href="#lineup" onClick={() => setIsNavOpen(false)}>Line Up</a>
             <a href="#schedule" onClick={() => setIsNavOpen(false)}>Jadwal</a>
+            <a href="#history" onClick={() => setIsNavOpen(false)}>Galeri</a>
             <a href="#tickets" onClick={() => setIsNavOpen(false)}>Tiket</a>
-            <a href="#venue" onClick={() => setIsNavOpen(false)}>Lokasi</a>
           </div>
         )}
       </nav>
@@ -66,15 +74,15 @@ export default function App() {
       <header className="relative bg-brand-yellow py-20 px-4 border-b-4 border-brand-dark overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           
-          <div className="inline-block bg-brand-pink text-white font-bold px-4 py-1 rounded-full border-2 border-brand-dark mb-4 pop-text text-sm md:text-base">
-            🔥 FESTIVAL HYBRID HIP-HOP & BAND TERBESAR
+          <div className="inline-block bg-brand-pink text-white font-bold px-4 py-1 rounded-full border-2 border-brand-dark mb-4 pop-text text-sm md:text-base uppercase">
+            🔥 #TWOCOLLAB #ONEBIGMOVEMENT
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black italic tracking-tight text-brand-dark uppercase leading-none mb-4">
-            294 <span className="text-brand-cyan pop-text">VERSE</span> 2026
+            294 <span className="text-brand-cyan pop-text">VERSE</span>
           </h1>
 
-          <p className="text-lg md:text-2xl font-bold text-brand-accent max-w-2xl mx-auto mb-8 uppercase">
+          <p className="text-lg md:text-2xl font-bold text-brand-dark max-w-2xl mx-auto mb-8 uppercase">
             {festivalInfo.tagline}
           </p>
 
@@ -98,49 +106,79 @@ export default function App() {
         </div>
       </header>
 
-      {/* LINE UP SECTION */}
+      {/* CAMPAIGN EVENT SECTION */}
+      <section id="about" className="py-16 px-4 max-w-7xl mx-auto w-full border-b-4 border-brand-dark">
+        <div className="text-center mb-12">
+          <span className="bg-brand-cyan text-brand-dark font-black px-4 py-1 text-sm border-2 border-brand-dark uppercase">
+            CAMPAIGN EVENT
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black uppercase text-brand-dark mt-2">
+            #TWOCOLLAB <span className="text-brand-pink">#ONEBIGMOVEMENT</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {/* Card Movement */}
+          <div className="pop-card bg-white p-8 border-4 border-brand-dark">
+            <div className="flex items-center gap-3 mb-4">
+              <Flame className="text-brand-pink" size={36} />
+              <h3 className="text-2xl font-black uppercase">Transformasi & Gerakan</h3>
+            </div>
+            <p className="text-gray-800 leading-relaxed font-medium">
+              {campaignData.movement}
+            </p>
+          </div>
+
+          {/* Card PB PORDI */}
+          <div className="pop-card bg-brand-yellow p-8 border-4 border-brand-dark">
+            <div className="flex items-center gap-3 mb-4">
+              <Trophy className="text-brand-dark" size={36} />
+              <h3 className="text-2xl font-black uppercase">Kolaborasi Eksklusif PB PORDI</h3>
+            </div>
+            <p className="text-brand-dark leading-relaxed font-medium mb-4">
+              {campaignData.pordi}
+            </p>
+            <div className="space-y-2 font-bold text-sm">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-brand-pink" />
+                <span>Nafas baru membawa domino ke Generasi Z dan Alpha</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={18} className="text-brand-pink" />
+                <span>Platform kolaborasi, kompetisi, dan komunitas dalam satu wadah</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+   {/* LINE UP SECTION */}
       <section id="lineup" className="py-16 px-4 max-w-7xl mx-auto w-full">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-brand-dark mb-4">
             LINE UP <span className="text-brand-pink">ARTIS</span>
           </h2>
-          <div className="flex justify-center gap-2">
-            {['All', 'Day 1', 'Day 2'].map(day => (
-              <button
-                key={day}
-                onClick={() => setFilterDay(day)}
-                className={`pop-button px-6 py-2 uppercase font-bold text-sm md:text-base ${
-                  filterDay === day 
-                    ? 'bg-brand-cyan text-brand-dark' 
-                    : 'bg-white text-brand-dark'
-                }`}
-              >
-                {day}
-              </button>
-            ))}
-          </div>
+          <p className="font-bold text-gray-700 uppercase tracking-wide">
+            Official Line Up 294 Verse
+          </p>
         </div>
 
-        {/* Grid Lineup */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredLineup.map(artist => (
-            <div key={artist.id} className="pop-card bg-white overflow-hidden group">
-              <div className="relative h-64 overflow-hidden border-b-2 border-brand-dark">
-                <img 
-                  src={artist.image} 
-                  alt={artist.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <span className="absolute top-3 right-3 bg-brand-yellow font-bold text-xs uppercase px-2 py-1 border border-brand-dark">
-                  {artist.genre}
-                </span>
-              </div>
-              <div className="p-5 bg-brand-cream">
-                <span className="text-xs font-bold uppercase text-brand-pink tracking-wider">{artist.day} • {artist.stage}</span>
-                <h3 className="text-2xl font-black uppercase text-brand-dark mt-1">{artist.name}</h3>
-              </div>
-            </div>
-          ))}
+        {/* Gambar Line Up */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="pop-card bg-white p-2 border-4 border-brand-dark">
+            <img 
+              src="/line-up-1.jpg" 
+              alt="Line Up 294 Verse 2026 - Part 1" 
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="pop-card bg-white p-2 border-4 border-brand-dark">
+            <img 
+              src="/line-up-2.jpg" 
+              alt="Line Up 294 Verse 2026 - Part 2" 
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -188,6 +226,35 @@ export default function App() {
         </div>
       </section>
 
+      {/* PREVIOUS EVENT & ACTIVITY SECTION */}
+      <section id="history" className="py-16 px-4 max-w-7xl mx-auto w-full border-b-4 border-brand-dark">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-6xl font-black uppercase text-brand-dark mb-2">
+            REKAM <span className="text-brand-pink">JEJAK</span> 294 JAKARTA
+          </h2>
+          <p className="font-bold text-gray-700">Aktivitas dan event yang telah kami selenggarakan sebelumnya</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {previousEvents.map((item) => (
+            <div key={item.id} className="pop-card bg-white p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Users className="text-brand-cyan" size={28} />
+                <h3 className="text-2xl font-black uppercase">{item.title}</h3>
+              </div>
+              <p className="text-gray-700 font-medium mb-6">{item.description}</p>
+              <div className="grid grid-cols-2 gap-3">
+                {item.images.map((imgUrl, i) => (
+                  <div key={i} className="h-40 border-2 border-brand-dark overflow-hidden">
+                    <img src={imgUrl} alt={`Previous Event ${i}`} className="w-full h-full object-cover hover:scale-105 transition-transform" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* TICKETING SECTION */}
       <section id="tickets" className="py-16 px-4 max-w-7xl mx-auto w-full">
         <div className="text-center mb-12">
@@ -197,7 +264,7 @@ export default function App() {
           <p className="font-bold text-gray-700">Pilih kategori tiket sebelum kehabisan!</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {ticketData.map((ticket) => (
             <div 
               key={ticket.id} 
@@ -215,15 +282,7 @@ export default function App() {
                   </span>
                 </div>
                 <h3 className="text-xl font-black uppercase text-brand-dark mb-2">{ticket.name}</h3>
-                <div className="text-3xl font-black text-brand-pink mb-6">{ticket.price}</div>
-                
-                <ul className="space-y-2 mb-8 font-bold text-sm text-gray-700">
-                  {ticket.features.map((feat, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <span className="text-brand-cyan">✔</span> {feat}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-2xl font-black text-brand-pink mb-6">{ticket.price}</div>
               </div>
 
               <button 
@@ -247,38 +306,25 @@ export default function App() {
           <div>
             <h3 className="text-2xl font-black italic text-brand-yellow mb-2">294.VERSE</h3>
             <p className="text-sm text-gray-400 font-body">
-              Festival musik gabungan Hip-Hop dan Band terbesar tahun ini. Menyajikan pengalaman pertunjukan panggung penuh energi.
+              Festival musik gabungan Hip-Hop dan Band terbesar persembahan 294 Jakarta x PB PORDI (Perkumpulan
+Olahraga Domino Indonesia).
             </p>
           </div>
 
           <div>
             <h4 className="text-lg font-bold text-brand-cyan uppercase mb-2">Lokasi Acara</h4>
             <p className="text-sm font-body">{festivalInfo.location}</p>
-            <p className="text-sm font-body text-gray-400 mt-1">29 November 2026</p>
+            <p className="text-sm font-body text-gray-400 mt-1">{festivalInfo.date}</p>
           </div>
 
           <div>
             <h4 className="text-lg font-bold text-brand-pink uppercase mb-2">Ikuti Kami</h4>
             <div className="flex gap-4">
-              {/* SVG Instagram */}
-              <a href="#" aria-label="Instagram" className="p-2 bg-white text-brand-dark pop-button hover:bg-brand-yellow">
+              <a href="https://instagram.com/294.jakarta" target="_blank" rel="noreferrer" aria-label="Instagram" className="p-2 bg-white text-brand-dark pop-button hover:bg-brand-yellow">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                </svg>
-              </a>
-              {/* SVG Youtube */}
-              <a href="#" aria-label="Youtube" className="p-2 bg-white text-brand-dark pop-button hover:bg-brand-yellow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
-                  <polygon points="10 15 15 12 10 9 10 15"/>
-                </svg>
-              </a>
-              {/* SVG Twitter / X */}
-              <a href="#" aria-label="Twitter" className="p-2 bg-white text-brand-dark pop-button hover:bg-brand-yellow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
                 </svg>
               </a>
             </div>
@@ -289,7 +335,6 @@ export default function App() {
           © 2026 294 VERSE FESTIVAL. ALL RIGHTS RESERVED.
         </div>
       </footer>
-      <Analytics />
     </div>
   );
 }

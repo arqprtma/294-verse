@@ -1,68 +1,109 @@
 export const festivalInfo = {
-  title: "294 VERSE FESTIVAL 2026",
+  title: "294 VERSE",
   date: "29 November 2026",
-  location: "Eco Island, Taman Impian Jaya Ancol",
+  location: "Eco Island - Ecovention Ancol, Jakarta Utara",
   tagline: "WHERE HIP-HOP FEET THE BAND SOUNDS"
 };
+
+export const campaignData = {
+  movement: "Lahir dari kerasnya solidaritas tongkrongan jalanan dan kultur gangster JEGADBWPM yang telah berdiri kokoh selama lebih dari satu dekade, 294 Jakarta kini bertransformasi menjadi kolektif kreatif yang progresif. Kami membuktikan bahwa anak-anak muda dari jalanan mampu mandiri secara ekonomi dan membuka lapangan pekerjaan bagi kawan-kawan komunitas.",
+  pordi: "Bekerja sama dengan PB PORDI (Perkumpulan Olahraga Domino Indonesia) di bawah naungan KORMI, 294 Verse menghadirkan pengalaman festival yang eksklusif dan sarat kebersamaan melalui kompetisi domino yang intimate untuk meruntuhkan sekat antara musisi dan penggemar."
+};
+
+export const previousEvents = [
+  {
+    id: 1,
+    title: "PREVIOUS EVENT 294 JAKARTA",
+    description: "Perjalanan mengeksekusi tiga event kultur hip-hop & pertunjukan musik panggung penuh energi yang berhasil menggaet ribuan massa komunitas.",
+    images: [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60"
+    ]
+  },
+  {
+    id: 2,
+    title: "PREVIOUS ACTIVITY & SOCIAL",
+    description: "Aktivitas keberdayaan sosial, perlombaan, santunan, dan pemberdayaan anak muda komunitas lokal sebagai wujud aksi nyata di lapangan.",
+    images: [
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60"
+    ]
+  }
+];
 
 export const lineUpData = [
   {
     id: 1,
-    name: "TULUS & THE RHYMES",
-    genre: "Band / Pop",
-    day: "Day 1",
-    stage: "Verse Main Stage",
+    name: "MORFEM",
+    genre: "Band / Rock",
+    day: "Band / Rock",
+    stage: "Main Stage",
     image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60"
   },
   {
     id: 2,
-    name: "LANYARD HIP-HOP COLLECTIVE",
-    genre: "Hip-Hop / Rap",
-    day: "Day 1",
+    name: "THE ADAMS",
+    genre: "Band / Rock",
+    day: "Band / Rock",
+    stage: "Main Stage",
+    image: "https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    id: 3,
+    name: "FSTVLST",
+    genre: "Band / Rock",
+    day: "Band / Rock",
+    stage: "Main Stage",
+    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60"
+  },
+  {
+    id: 4,
+    name: "HIPHOP SESSION II",
+    genre: "Hip-Hop",
+    day: "Hip-Hop",
     stage: "294 Boombox Stage",
     image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60"
   },
   {
-    id: 3,
-    name: "FEAST & HINDSIGHT",
-    genre: "Rock Band",
-    day: "Day 1",
-    stage: "Verse Main Stage",
-    image: "https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=500&auto=format&fit=crop&q=60"
-  },
-  {
-    id: 4,
-    name: "RAMENGVRL & FRIENDS",
+    id: 5,
+    name: "HIPHOP SESSION I",
     genre: "Hip-Hop",
-    day: "Day 2",
+    day: "Hip-Hop",
     stage: "294 Boombox Stage",
     image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=60"
   },
   {
-    id: 5,
-    name: "SERINGAI",
-    genre: "Metal / Punk Band",
-    day: "Day 2",
-    stage: "Verse Main Stage",
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60"
+    id: 6,
+    name: "JEBLOG MURIA",
+    genre: "Band / Rock",
+    day: "Band / Rock",
+    stage: "Main Stage",
+    image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=500&auto=format&fit=crop&q=60"
   },
   {
-    id: 6,
-    name: "TARSAN RAPPER CLUB",
-    genre: "Oldschool Hip-Hop",
-    day: "Day 2",
-    stage: "294 Boombox Stage",
-    image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=500&auto=format&fit=crop&q=60"
+    id: 7,
+    name: "INDAHKUS",
+    genre: "Pop",
+    day: "Band / Rock",
+    stage: "Main Stage",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500&auto=format&fit=crop&q=60"
   }
 ];
 
 export const scheduleData = [
   {
-    day: "Minggu, 29 November 2026",
+    day: "Rundown Acara (29 November 2026)",
     schedules: [
-      { time: "16:30 - 17:30", artist: "TARSAN RAPPER CLUB", stage: "294 Boombox Stage" },
-      { time: "18:00 - 19:00", artist: "SERINGAI", stage: "Verse Main Stage" },
-      { time: "19:30 - 21:00", artist: "RAMENGVRL & FRIENDS", stage: "294 Boombox Stage" },
+      { time: "14:00 - 15:00", artist: "Open Gate", stage: "Main Gate" },
+      { time: "15:00 - 16:30", artist: "HipHop Session I", stage: "294 Boombox Stage" },
+      { time: "16:30 - 18:00", artist: "HipHop Session II", stage: "294 Boombox Stage" },
+      { time: "18:00 - 19:00", artist: "Break & Sunset Chill", stage: "All Area" },
+      { time: "19:10 - 19:30", artist: "Interactive Games / Talkshow", stage: "Mini Stage / Domino Area" },
+      { time: "19:40 - 21:30", artist: "Guest Star HipHop 1", stage: "294 Boombox Stage" },
+      { time: "21:30 - 21:35", artist: "Special Announcement", stage: "Main Stage" },
+      { time: "21:40 - 23:00", artist: "Guest Star HipHop 2", stage: "Main Stage" },
+      { time: "23:05 - 23:50", artist: "Guest Star 1", stage: "Main Stage" },
+      { time: "00:00 - 00:50", artist: "Guest Star 2 (Closing Ceremony)", stage: "Main Stage" }
     ]
   }
 ];
@@ -70,23 +111,32 @@ export const scheduleData = [
 export const ticketData = [
   {
     id: 1,
-    name: "EARLY BIRD",
-    price: "Rp 350.000",
-    status: "SOLD OUT",
-    features: ["Akses Semua Stage", "Merchandise Pass"]
+    name: "EARLY",
+    price: "Rp 45.000",
+    status: "AVAILABLE",
   },
   {
     id: 2,
-    name: "PRESALE 1",
-    price: "Rp 450.000",
+    name: "PRESALE I",
+    price: "Rp 65.000",
     status: "AVAILABLE",
-    features: ["Akses Semua Stage", "Merchandise Pass"]
   },
   {
     id: 3,
-    name: "PRESALE 2",
-    price: "Rp 850.000",
+    name: "PRESALE II",
+    price: "Rp 85.000",
     status: "AVAILABLE",
-    features: ["Akses Semua Stage", "Merchandise Pass"]
+  },
+  {
+    id: 4,
+    name: "ON THE SPOT",
+    price: "Rp 120.000",
+    status: "AVAILABLE",
+  },
+  {
+    id: 5,
+    name: "BUNDLING",
+    price: "Rp 35.000",
+    status: "AVAILABLE",
   }
 ];
