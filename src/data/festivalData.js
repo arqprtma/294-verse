@@ -10,26 +10,9 @@ export const campaignData = {
   pordi: "Bekerja sama dengan PB PORDI (Perkumpulan Olahraga Domino Indonesia) di bawah naungan KORMI, 294 Verse menghadirkan pengalaman festival yang eksklusif dan sarat kebersamaan melalui kompetisi domino yang intimate untuk meruntuhkan sekat antara musisi dan penggemar."
 };
 
-export const previousEvents = [
-  {
-    id: 1,
-    title: "PREVIOUS EVENT 294 JAKARTA",
-    description: "Perjalanan mengeksekusi tiga event kultur hip-hop & pertunjukan musik panggung penuh energi yang berhasil menggaet ribuan massa komunitas.",
-    images: [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60"
-    ]
-  },
-  {
-    id: 2,
-    title: "PREVIOUS ACTIVITY & SOCIAL",
-    description: "Aktivitas keberdayaan sosial, perlombaan, santunan, dan pemberdayaan anak muda komunitas lokal sebagai wujud aksi nyata di lapangan.",
-    images: [
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60"
-    ]
-  }
-];
+export const previousEvents = {
+  image: "/prev-event.jpg"
+};
 
 export const lineUpData = [
   {
@@ -94,16 +77,16 @@ export const scheduleData = [
   {
     day: "Rundown Acara (29 November 2026)",
     schedules: [
-      { time: "14:00 - 15:00", artist: "Open Gate", stage: "Main Gate" },
-      { time: "15:00 - 16:30", artist: "HipHop Session I", stage: "294 Boombox Stage" },
-      { time: "16:30 - 18:00", artist: "HipHop Session II", stage: "294 Boombox Stage" },
-      { time: "18:00 - 19:00", artist: "Break & Sunset Chill", stage: "All Area" },
-      { time: "19:10 - 19:30", artist: "Interactive Games / Talkshow", stage: "Mini Stage / Domino Area" },
-      { time: "19:40 - 21:30", artist: "Guest Star HipHop 1", stage: "294 Boombox Stage" },
-      { time: "21:30 - 21:35", artist: "Special Announcement", stage: "Main Stage" },
-      { time: "21:40 - 23:00", artist: "Guest Star HipHop 2", stage: "Main Stage" },
-      { time: "23:05 - 23:50", artist: "Guest Star 1", stage: "Main Stage" },
-      { time: "00:00 - 00:50", artist: "Guest Star 2 (Closing Ceremony)", stage: "Main Stage" }
+      { time: "14:00 - 15:00", artist: "Open Gate" },
+      { time: "15:00 - 16:30", artist: "HipHop Session I" },
+      { time: "16:30 - 18:00", artist: "HipHop Session II" },
+      { time: "18:00 - 19:00", artist: "Break & Sunset Chill" },
+      { time: "19:10 - 19:30", artist: "Interactive Games / Talkshow"},
+      { time: "19:40 - 21:30", artist: "Guest Star HipHop 1" },
+      { time: "21:30 - 21:35", artist: "Special Announcement"},
+      { time: "21:40 - 23:00", artist: "Guest Star HipHop 2"},
+      { time: "23:05 - 23:50", artist: "Guest Star 1"},
+      { time: "00:00 - 00:50", artist: "Guest Star 2 (Closing Ceremony)"}
     ]
   }
 ];
@@ -113,7 +96,7 @@ export const ticketData = [
     id: 1,
     name: "EARLY",
     price: "Rp 45.000",
-    status: "AVAILABLE",
+    status: "SOLD OUT",
   },
   {
     id: 2,

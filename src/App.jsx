@@ -226,32 +226,22 @@ export default function App() {
         </div>
       </section>
 
-      {/* PREVIOUS EVENT & ACTIVITY SECTION */}
-      <section id="history" className="py-16 px-4 max-w-7xl mx-auto w-full border-b-4 border-brand-dark">
-        <div className="text-center mb-12">
+    {/* PREVIOUS EVENT */}
+      <section id="history" className="py-16 px-4 max-w-5xl mx-auto w-full border-b-4 border-brand-dark">
+        <div className="text-center mb-10">
           <h2 className="text-4xl md:text-6xl font-black uppercase text-brand-dark mb-2">
-            REKAM <span className="text-brand-pink">JEJAK</span> 294 JAKARTA
+            Previous <span className="text-brand-pink">Event</span> 294 JAKARTA
           </h2>
-          <p className="font-bold text-gray-700">Aktivitas dan event yang telah kami selenggarakan sebelumnya</p>
+          <p className="font-bold text-gray-700">Event yang telah kami selenggarakan sebelumnya</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {previousEvents.map((item) => (
-            <div key={item.id} className="pop-card bg-white p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Users className="text-brand-cyan" size={28} />
-                <h3 className="text-2xl font-black uppercase">{item.title}</h3>
-              </div>
-              <p className="text-gray-700 font-medium mb-6">{item.description}</p>
-              <div className="grid grid-cols-2 gap-3">
-                {item.images.map((imgUrl, i) => (
-                  <div key={i} className="h-40 border-2 border-brand-dark overflow-hidden">
-                    <img src={imgUrl} alt={`Previous Event ${i}`} className="w-full h-full object-cover hover:scale-105 transition-transform" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+        {/* Gambar Full 1 Kotak */}
+        <div className="pop-card bg-white p-2 border-4 border-brand-dark">
+          <img 
+            src="/prev-event.jpg" 
+            alt="Rekam Jejak 294 Jakarta" 
+            className="w-full h-auto object-cover"
+          />
         </div>
       </section>
 
