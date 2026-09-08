@@ -20,4 +20,3 @@ jobs:
           server: ${{ secrets.FTP_SERVER_PROD }}
           username: ${{ secrets.FTP_USERNAME_PROD }}
           password: ${{ secrets.FTP_PASSWORD_PROD }}
-          server-dir: ./internal-b3e22244e233ea548083efe9ee0a68ae/
