@@ -1,0 +1,23 @@
+name: 🚀 Deploy to PROD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy-prod:
+    name: 🚀 Deploy to production environment
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: 📥 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📤 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER_PROD }}
+          username: ${{ secrets.FTP_USERNAME_PROD }}
+          password: ${{ secrets.FTP_PASSWORD_PROD }}
+          server-dir: ./internal-b3e22244e233ea548083efe9ee0a68ae/
