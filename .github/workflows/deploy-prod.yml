@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME_PROD }}
           password: ${{ secrets.FTP_PASSWORD_PROD }}
           local-dir: ./dist/                  # Gunakan ./build/ jika kamu pakai Create React App (CRA)
-          server-dir: ./public_html/          # Memastikan file masuk langsung ke folder public_html cPanel
+          server-dir: ./          # Memastikan file masuk langsung ke folder public_html cPanel
