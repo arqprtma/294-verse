@@ -14,9 +14,21 @@ jobs:
       - name: 📥 Get latest code
         uses: actions/checkout@v4
 
-      - name: 📤 Sync files
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📦 Install dependencies & Build React
+        run: |
+          npm ci
+          npm run build
+
+      - name: 📤 Sync files to cPanel FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER_PROD }}
           username: ${{ secrets.FTP_USERNAME_PROD }}
           password: ${{ secrets.FTP_PASSWORD_PROD }}
+          local-dir: ./dist/                  # Gunakan ./build/ jika kamu pakai Create React App (CRA)
+          server-dir: ./public_html/          # Memastikan file masuk langsung ke folder public_html cPanel
