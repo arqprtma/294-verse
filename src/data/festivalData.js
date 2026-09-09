@@ -10,6 +10,16 @@ export const campaignData = {
   pordi: "Bekerja sama dengan PB PORDI (Perkumpulan Olahraga Domino Indonesia) di bawah naungan KORMI, 294 Verse menghadirkan pengalaman festival yang eksklusif dan sarat kebersamaan melalui kompetisi domino yang intimate untuk meruntuhkan sekat antara musisi dan penggemar."
 };
 
+export const lineupData = [
+    { id: 1, name: "The JEBLOGS x Trico x Lealona", image: "/lineup/jebloxtiricolealona.png", rotated: "-rotate-1" },
+    { id: 2, name: "The Jansen", image: "/lineup/thejansen.jpeg", rotated: "rotate-2" },
+    { id: 3, name: "WSC", image: "/lineup/wsc.jpeg", rotated: "-rotate-2" },
+    { id: 4, name: "Westwew", image: "/lineup/westwew.jpeg", rotated: "rotate-1" },
+    { id: 5, name: "GHXZY", image: "/lineup/ghxzy.jpeg", rotated: "-rotate-1" },
+    { id: 6, name: "Badi303", image: "/lineup/badi303.jpg", rotated: "rotate-2" },
+
+];
+
 // Portofolio slider (3 gambar)
 export const previousEvents = [
   {
@@ -66,9 +76,8 @@ export const ticketData = [
   {
     id: 3,
     name: "PRESALE II",
-    price: "Rp 100.000",
-    status: "AVAILABLE",
-    link:"https://artatix.co.id/event/294_verse"
+    price: "COMING SOON",
+    status: "COMING SOON",
   },
   {
     id: 4,
