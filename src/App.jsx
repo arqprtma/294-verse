@@ -478,9 +478,13 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-black italic text-brand-yellow mb-2">
-              294.VERSE
-            </h3>
+            <a href="#" className="flex items-center">
+              <img
+                src="/logo.png"
+                alt="Logo 294 Verse"
+                className="h-16 md:h-20 w-auto object-contain py-1"
+              />
+            </a>
             <p className="text-sm text-gray-400 font-body">
               Festival musik gabungan Hip-Hop dan Band terbesar persembahan 294
               Jakarta x PB PORDI (Perkumpulan Olahraga Domino Indonesia)[cite:
