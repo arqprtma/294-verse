@@ -13,7 +13,7 @@ export const campaignData = {
 export const lineupData = [
     { id: 1, name: "The JEBLOGS x Trico x Lealona", image: "/lineup/jebloxtiricolealona.png", rotated: "-rotate-1" },
     { id: 2, name: "The Jansen", image: "/lineup/thejansen.jpeg", rotated: "rotate-2" },
-    { id: 3, name: "WSC", image: "/lineup/wsc.jpeg", rotated: "-rotate-2" },
+    { id: 3, name: "Weekenders Service Crew (WSC)", image: "/lineup/wsc.jpeg", rotated: "-rotate-2" },
     { id: 4, name: "Westwew", image: "/lineup/westwew.jpeg", rotated: "rotate-1" },
     { id: 5, name: "GHXZY", image: "/lineup/ghxzy.jpeg", rotated: "-rotate-1" },
     { id: 6, name: "Badi303", image: "/lineup/badi303.jpg", rotated: "rotate-2" },
