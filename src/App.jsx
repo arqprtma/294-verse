@@ -278,7 +278,7 @@ export default function App() {
             <div
               key={artist.id}
               /* 1. Tambahkan h-[340px] md:h-[380px] agar tinggi SEMUA kartu terkunci sama */
-              className={`w-[calc(50%-8px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(25%-18px)] h-[340px] md:h-[380px] pop-card bg-white border-4 border-brand-dark p-2 md:p-3 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 hover:bg-brand-yellow/10 group ${artist.rotated}`}
+             className={`w-full sm:w-[calc(33.333%-11px)] lg:w-[calc(25%-18px)] h-[380px] sm:h-[340px] md:h-[380px] pop-card bg-white border-4 border-brand-dark p-3 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 hover:bg-brand-yellow/10 group ${artist.rotated}`}
             >
               {/* 2. Gunakan flex-1 agar kontainer gambar otomatis mengisi sisa ruang secara fleksibel */}
               <div className="relative flex-1 border-2 border-brand-dark overflow-hidden bg-gray-100 mb-3">
