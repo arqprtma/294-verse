@@ -10,69 +10,26 @@ export const campaignData = {
   pordi: "Bekerja sama dengan PB PORDI (Perkumpulan Olahraga Domino Indonesia) di bawah naungan KORMI, 294 Verse menghadirkan pengalaman festival yang eksklusif dan sarat kebersamaan melalui kompetisi domino yang intimate untuk meruntuhkan sekat antara musisi dan penggemar."
 };
 
-export const previousEvents = {
-  image: "/prev-event.jpg"
-};
-
-export const lineUpData = [
+// Portofolio slider (3 gambar)
+export const previousEvents = [
   {
     id: 1,
-    name: "MORFEM",
-    genre: "Band / Rock",
-    day: "Band / Rock",
-    stage: "Main Stage",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60"
+    title: "Previous Event Part 1",
+    image: "/prev-event.jpg"
   },
   {
     id: 2,
-    name: "THE ADAMS",
-    genre: "Band / Rock",
-    day: "Band / Rock",
-    stage: "Main Stage",
-    image: "https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=500&auto=format&fit=crop&q=60"
+    title: "Previous Event Part 2",
+    image: "/prev-event-2.jpg" // Sesuaikan nama file dokumentasi kamu di folder public
   },
   {
     id: 3,
-    name: "FSTVLST",
-    genre: "Band / Rock",
-    day: "Band / Rock",
-    stage: "Main Stage",
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60"
-  },
-  {
-    id: 4,
-    name: "HIPHOP SESSION II",
-    genre: "Hip-Hop",
-    day: "Hip-Hop",
-    stage: "294 Boombox Stage",
-    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=60"
-  },
-  {
-    id: 5,
-    name: "HIPHOP SESSION I",
-    genre: "Hip-Hop",
-    day: "Hip-Hop",
-    stage: "294 Boombox Stage",
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=60"
-  },
-  {
-    id: 6,
-    name: "JEBLOG MURIA",
-    genre: "Band / Rock",
-    day: "Band / Rock",
-    stage: "Main Stage",
-    image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=500&auto=format&fit=crop&q=60"
-  },
-  {
-    id: 7,
-    name: "INDAHKUS",
-    genre: "Pop",
-    day: "Band / Rock",
-    stage: "Main Stage",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500&auto=format&fit=crop&q=60"
+    title: "Previous Event Part 3",
+    image: "/prev-event-3.jpg" // Sesuaikan nama file dokumentasi kamu di folder public
   }
 ];
 
+// Rundown disimpan (Seksi JSX di-hidden/commented out di App.jsx)
 export const scheduleData = [
   {
     day: "Rundown Acara (29 November 2026)",
@@ -91,35 +48,32 @@ export const scheduleData = [
   }
 ];
 
+// Update harga & status tiket (Sesuai poin 5)
 export const ticketData = [
   {
     id: 1,
     name: "EARLY",
-    price: "Rp 45.000",
+    price: "Rp 60.000",
     status: "SOLD OUT",
   },
   {
     id: 2,
     name: "PRESALE I",
-    price: "Rp 65.000",
+    price: "Rp 80.000",
     status: "AVAILABLE",
+    link:"https://artatix.co.id/event/294_verse"
   },
   {
     id: 3,
     name: "PRESALE II",
-    price: "Rp 85.000",
+    price: "Rp 100.000",
     status: "AVAILABLE",
+    link:"https://artatix.co.id/event/294_verse"
   },
   {
     id: 4,
     name: "ON THE SPOT",
-    price: "Rp 120.000",
-    status: "AVAILABLE",
-  },
-  {
-    id: 5,
-    name: "BUNDLING",
-    price: "Rp 35.000",
-    status: "AVAILABLE",
+    price: "COMING SOON",
+    status: "COMING SOON",
   }
 ];
