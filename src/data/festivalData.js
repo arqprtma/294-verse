@@ -86,3 +86,34 @@ export const ticketData = [
     status: "COMING SOON",
   }
 ];
+
+// Data Partner & Sponsor
+export const partnerData = {
+  venueSponsors: [
+    {
+      id: 1,
+      name: "Taman Impian Jaya Ancol",
+      logo: "/sponsor/logo-ancol.png", // Ganti dengan path logo Ancol milikmu
+      category: "Official Venue Sponsor",
+    },
+  ],
+  mediaPartners: [
+    { id: 1, name: "Media Partner 1", logo: "/mediapartner/agi.png" },
+    { id: 2, name: "Media Partner 2", logo: "/mediapartner/bekasigigs.png" },
+    { id: 3, name: "Media Partner 3", logo: "/mediapartner/gigs.png" },
+    { id: 4, name: "Media Partner 4", logo: "/mediapartner/honesstudio.png" },
+    { id: 5, name: "Media Partner 5", logo: "/mediapartner/infogigs.png" },
+    { id: 6, name: "Media Partner 6", logo: "/mediapartner/infomustika.png" },
+    { id: 7, name: "Media Partner 7", logo: "/mediapartner/konserdaily.png" },
+    { id: 8, name: "Media Partner 8", logo: "/mediapartner/konserfyp.png" },
+    { id: 9, name: "Media Partner 9", logo: "/mediapartner/konsernews.png" },
+    { id: 10, name: "Media Partner 10", logo: "/mediapartner/ruangevent.png" },
+    { id: 11, name: "Media Partner 11", logo: "/mediapartner/sanasinikonser.png" },
+  ],
+  communityPartners: [
+    { id: 1, name: "Community 1", logo: "/mediapartner/agi.png" },
+    { id: 2, name: "Community 2", logo: "/mediapartner/agi.png" },
+    { id: 3, name: "Community 3", logo: "/mediapartner/agi.png" },
+    { id: 4, name: "Community 4", logo: "/mediapartner/agi.png" },
+  ],
+};

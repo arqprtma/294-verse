@@ -19,6 +19,7 @@ import {
   previousEvents,
   campaignData,
   lineupData,
+  partnerData,
 } from "./data/festivalData";
 
 inject();
@@ -278,7 +279,7 @@ export default function App() {
             <div
               key={artist.id}
               /* 1. Tambahkan h-[340px] md:h-[380px] agar tinggi SEMUA kartu terkunci sama */
-             className={`w-full sm:w-[calc(33.333%-11px)] lg:w-[calc(25%-18px)] h-[380px] sm:h-[340px] md:h-[380px] pop-card bg-white border-4 border-brand-dark p-3 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 hover:bg-brand-yellow/10 group ${artist.rotated}`}
+              className={`w-full sm:w-[calc(33.333%-11px)] lg:w-[calc(25%-18px)] h-[380px] sm:h-[340px] md:h-[380px] pop-card bg-white border-4 border-brand-dark p-3 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2 hover:bg-brand-yellow/10 group ${artist.rotated}`}
             >
               {/* 2. Gunakan flex-1 agar kontainer gambar otomatis mengisi sisa ruang secara fleksibel */}
               <div className="relative flex-1 border-2 border-brand-dark overflow-hidden bg-gray-100 mb-3">
@@ -468,6 +469,93 @@ export default function App() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* PARTNERS & SPONSORS SECTION */}
+      <section
+        id="partners"
+        className="py-16 px-4 max-w-7xl mx-auto w-full border-b-4 border-brand-dark"
+      >
+        <div className="text-center mb-12">
+          <span className="bg-brand-pink text-white font-black px-4 py-1 text-sm border-2 border-brand-dark uppercase tracking-wider">
+            OUR SUPPORTERS
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black uppercase text-brand-dark mt-2">
+            SPONSORS &{" "}
+            <span className="text-brand-cyan pop-text">PARTNERS</span>
+          </h2>
+        </div>
+
+        <div className="space-y-12">
+          {/* 1. OFFICIAL VENUE SPONSOR */}
+          <div className="text-center">
+            <h3 className="text-lg md:text-xl font-black uppercase tracking-wider text-brand-dark mb-4 inline-block bg-brand-yellow px-4 py-1 border-2 border-brand-dark -rotate-1">
+              📍 Official Venue Sponsor
+            </h3>
+            <div className="flex justify-center items-center mt-2">
+              {partnerData.venueSponsors.map((venue) => (
+                <div
+                  key={venue.id}
+                  className="pop-card bg-white p-6 border-4 border-brand-dark flex flex-col items-center justify-center max-w-md w-full hover:-translate-y-1 transition-transform"
+                >
+                  <img
+                    src={venue.logo}
+                    alt={venue.name}
+                    className="h-20 md:h-28 w-auto object-contain mb-3"
+                  />
+                  <span className="font-black text-sm md:text-base uppercase text-brand-dark">
+                    {venue.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MEDIA PARTNERS */}
+          <div className="text-center">
+            <h3 className="text-lg md:text-xl font-black uppercase tracking-wider text-brand-dark mb-6 inline-block bg-brand-cyan text-brand-dark px-4 py-1 border-2 border-brand-dark rotate-1">
+              📺 Official Media Partners
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+              {partnerData.mediaPartners.map((media) => (
+                <div
+                  key={media.id}
+                  className="pop-card bg-white border-4 border-brand-dark h-32 md:h-36 p-5 flex items-center justify-center hover:-translate-y-1 transition-transform"
+                >
+                  <img
+                    src={media.logo}
+                    alt={media.name}
+                    className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* COMMUNITY PARTNERS */}
+          {/* COMMUNITY PARTNERS */}
+          <div className="text-center mt-12">
+            <h3 className="text-lg md:text-xl font-black uppercase tracking-wider text-brand-dark mb-6 inline-block bg-brand-pink text-white px-4 py-1 border-2 border-brand-dark -rotate-1">
+              🤝 Community Partners
+            </h3>
+
+            {/* CARD TEASER / COMING SOON */}
+            <div className="pop-card bg-brand-yellow p-8 border-4 border-brand-dark max-w-xl mx-auto flex flex-col items-center justify-center relative">
+              <div className="bg-brand-pink text-white font-black px-3 py-1 border-2 border-brand-dark text-xs uppercase tracking-wider rotate-3 mb-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                ⚡ COMING SOON ⚡
+              </div>
+
+              <h4 className="text-2xl md:text-3xl font-black uppercase text-brand-dark mb-2">
+                Segera Diumumkan!
+              </h4>
+
+              <p className="font-bold text-brand-dark text-sm md:text-base max-w-md">
+                Pendaftaran dan daftar kolaborasi komunitas akan segera dibuka.
+                Stay tuned!
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
