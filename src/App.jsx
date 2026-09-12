@@ -575,8 +575,7 @@ export default function App() {
             </a>
             <p className="text-sm text-gray-400 font-body">
               Festival musik gabungan Hip-Hop dan Band terbesar persembahan 294
-              Jakarta x PB PORDI (Perkumpulan Olahraga Domino Indonesia)[cite:
-              1].
+              Jakarta x PB PORDI (Perkumpulan Olahraga Domino Indonesia).
             </p>
           </div>
 
