@@ -526,7 +526,7 @@ export default function App() {
                   <img
                     src={media.logo}
                     alt={media.name}
-                    className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-contain transition-all duration-300"
                   />
                 </div>
               ))}
@@ -534,26 +534,25 @@ export default function App() {
           </div>
 
           {/* COMMUNITY PARTNERS */}
-          {/* COMMUNITY PARTNERS */}
           <div className="text-center mt-12">
             <h3 className="text-lg md:text-xl font-black uppercase tracking-wider text-brand-dark mb-6 inline-block bg-brand-pink text-white px-4 py-1 border-2 border-brand-dark -rotate-1">
               🤝 Community Partners
             </h3>
 
             {/* CARD TEASER / COMING SOON */}
-            <div className="pop-card bg-brand-yellow p-8 border-4 border-brand-dark max-w-xl mx-auto flex flex-col items-center justify-center relative">
-              <div className="bg-brand-pink text-white font-black px-3 py-1 border-2 border-brand-dark text-xs uppercase tracking-wider rotate-3 mb-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                ⚡ COMING SOON ⚡
-              </div>
-
-              <h4 className="text-2xl md:text-3xl font-black uppercase text-brand-dark mb-2">
-                Segera Diumumkan!
-              </h4>
-
-              <p className="font-bold text-brand-dark text-sm md:text-base max-w-md">
-                Pendaftaran dan daftar kolaborasi komunitas akan segera dibuka.
-                Stay tuned!
-              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+              {partnerData.communityPartners.map((media) => (
+                <div
+                  key={media.id}
+                  className="pop-card bg-white border-4 border-brand-dark h-32 md:h-36 p-5 flex items-center justify-center hover:-translate-y-1 transition-transform"
+                >
+                  <img
+                    src={media.logo}
+                    alt={media.name}
+                    className="w-full h-full object-contain transition-all duration-300"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
