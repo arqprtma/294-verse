@@ -93,6 +93,12 @@ export default function App() {
               Tiket
             </a>
             <a
+              href="#partners"
+              className="hover:text-brand-pink transition-colors"
+            >
+              Partners
+            </a>
+            <a
               href="#tickets"
               className="pop-button bg-brand-cyan px-4 py-2 text-brand-dark uppercase"
             >
@@ -125,6 +131,9 @@ export default function App() {
             </a>
             <a href="#tickets" onClick={() => setIsNavOpen(false)}>
               Tiket
+            </a>
+            <a href="#partners" onClick={() => setIsNavOpen(false)}>
+              Partners
             </a>
           </div>
         )}

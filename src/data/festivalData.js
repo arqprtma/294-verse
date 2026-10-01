@@ -27,16 +27,16 @@ export const previousEvents = [
     title: "Previous Event Part 1",
     image: "/prev-event.jpg"
   },
-  {
-    id: 2,
-    title: "Previous Event Part 2",
-    image: "/prev-event-2.jpg" // Sesuaikan nama file dokumentasi kamu di folder public
-  },
-  {
-    id: 3,
-    title: "Previous Event Part 3",
-    image: "/prev-event-3.jpg" // Sesuaikan nama file dokumentasi kamu di folder public
-  }
+  // {
+  //   id: 2,
+  //   title: "Previous Event Part 2",
+  //   image: "/prev-event-2.jpg" // Sesuaikan nama file dokumentasi kamu di folder public
+  // },
+  // {
+  //   id: 3,
+  //   title: "Previous Event Part 3",
+  //   image: "/prev-event-3.jpg" // Sesuaikan nama file dokumentasi kamu di folder public
+  // }
 ];
 
 // Rundown disimpan (Seksi JSX di-hidden/commented out di App.jsx)
