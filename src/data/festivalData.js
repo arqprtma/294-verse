@@ -120,5 +120,9 @@ export const partnerData = {
     { id: 2, name: "Community 2", logo: "/mediapartner/community-2.jpeg" },
     { id: 3, name: "Community 3", logo: "/mediapartner/community-3.jpeg" },
     { id: 4, name: "Community 4", logo: "/mediapartner/community-4.jpeg" },
+    { id: 5, name: "Community 1", logo: "/mediapartner/community-5.jpeg" },
+    { id: 6, name: "Community 2", logo: "/mediapartner/community-6.jpeg" },
+    { id: 7, name: "Community 3", logo: "/mediapartner/community-7.jpeg" },
+    { id: 8, name: "Community 4", logo: "/mediapartner/community-8.jpeg" },
   ],
 };
