@@ -76,6 +76,18 @@ const ticketPlatforms = [
   },
 ];
 
+const presaleTwoPlatforms = ticketPlatforms.map((platform) => {
+  const presaleTwoLinks = {
+    Artatix: "https://artatix.co.id/event/294_verse/ticket",
+    Goers:
+      "https://www.goersapp.com/events/schedules/294verse--294verse/this%20event",
+    Yesplis: "https://www.yesplis.com/event/294verse",
+  };
+  const link = presaleTwoLinks[platform.name];
+
+  return link ? { ...platform, link } : platform;
+});
+
 // Update harga & status tiket (Sesuai poin 5)
 export const ticketData = [
   {
@@ -96,14 +108,7 @@ export const ticketData = [
     name: "PRESALE II",
     price: "Rp 100.000",
     status: "AVAILABLE",
-    platforms: ticketPlatforms.map((platform) =>
-      platform.name === "Goers"
-        ? {
-            ...platform,
-            link: "https://www.goersapp.com/events/schedules/294verse--294verse/this%20event",
-          }
-        : platform,
-    ),
+    platforms: presaleTwoPlatforms,
   },
   {
     id: 4,
