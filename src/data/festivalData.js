@@ -58,6 +58,24 @@ export const scheduleData = [
   }
 ];
 
+const ticketPlatforms = [
+  {
+    name: "Artatix",
+    image: "/artatix.webp",
+    link: "https://artatix.co.id/event/294_verse",
+  },
+  {
+    name: "Goers",
+    image: "/geors.png",
+    link: "https://www.goersapp.com/events/294-verse--294verse",
+  },
+  {
+    name: "Yesplis",
+    image: "/yesplis.svg",
+    link: "https://www.yesplis.com/event/294verse",
+  },
+];
+
 // Update harga & status tiket (Sesuai poin 5)
 export const ticketData = [
   {
@@ -71,13 +89,14 @@ export const ticketData = [
     name: "PRESALE I",
     price: "Rp 80.000",
     status: "AVAILABLE",
-    link:"https://artatix.co.id/event/294_verse"
+    platforms: ticketPlatforms,
   },
   {
     id: 3,
     name: "PRESALE II",
-    price: "COMING SOON",
+   price: "COMING SOON",
     status: "COMING SOON",
+    platforms: ticketPlatforms,
   },
   {
     id: 4,

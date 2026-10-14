@@ -27,6 +27,7 @@ inject();
 export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedTicket, setSelectedTicket] = useState(null);
 
   // Motion Parallax Hooks
   const { scrollY } = useScroll();
@@ -425,6 +426,7 @@ export default function App() {
           {ticketData.map((ticket) => {
             const isSoldOut = ticket.status === "SOLD OUT";
             const isComingSoon = ticket.status === "COMING SOON";
+            const ticketLinks = [ticket.link1, ticket.link2].filter(Boolean);
 
             return (
               <div
@@ -456,30 +458,88 @@ export default function App() {
                   </div>
                 </div>
 
-                <a
-                  disabled={isSoldOut || isComingSoon}
-                  className={`w-full py-3 pop-button font-black uppercase text-sm text-center ${
-                    isSoldOut
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : isComingSoon
-                        ? "bg-brand-cyan cursor-not-allowed text-brand-dark"
-                        : "bg-brand-yellow hover:bg-brand-pink hover:text-white"
-                  }`}
-                  href={ticket.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {isSoldOut
-                    ? "Habis Terjual"
-                    : isComingSoon
-                      ? "Segera Hadir"
-                      : "Beli Tiket"}
-                </a>
+                {isSoldOut ? (
+                  <button
+                    disabled
+                    className="w-full py-3 pop-button font-black uppercase text-sm text-center bg-gray-400 cursor-not-allowed"
+                  >
+                    Habis Terjual
+                  </button>
+                ) : isComingSoon ? (
+                  <button
+                    disabled
+                    className="w-full py-3 pop-button font-black uppercase text-sm text-center bg-brand-cyan cursor-not-allowed text-brand-dark"
+                  >
+                    Segera Hadir
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setSelectedTicket(ticket)}
+                    className="w-full py-3 pop-button font-black uppercase text-sm text-center bg-brand-yellow hover:bg-brand-pink hover:text-white"
+                  >
+                    Beli Tiket
+                  </button>
+                )}
               </div>
             );
           })}
         </div>
       </section>
+
+      {selectedTicket && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4"
+          onClick={() => setSelectedTicket(null)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="ticket-dialog-title"
+            className="pop-card w-full max-w-lg border-4 border-brand-dark bg-brand-cream p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:p-7"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-6 flex items-start justify-between gap-4">
+              <div>
+                <h2
+                  id="ticket-dialog-title"
+                  className="text-2xl font-black uppercase tracking-tight text-brand-dark sm:text-3xl"
+                >
+                  Beli {selectedTicket.name}
+                </h2>
+                <p className="mt-1 font-bold text-gray-700">
+                  Pilih platform untuk melanjutkan pembelian
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedTicket(null)}
+                aria-label="Tutup pilihan platform tiket"
+                className="pop-button border-2 border-brand-dark bg-brand-yellow p-2 text-brand-dark"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {selectedTicket.platforms.map((platform) => (
+                <a
+                  key={platform.name}
+                  href={platform.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setSelectedTicket(null)}
+                  aria-label={`Beli tiket ${selectedTicket.name} melalui ${platform.name}`}
+                  className="group flex min-h-24 items-center justify-center rounded-sm border-2 border-brand-dark bg-white p-4 transition-all hover:-translate-y-1 hover:bg-brand-yellow hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus-visible:outline focus-visible:outline-4 focus-visible:outline-brand-pink"
+                >
+                  <img
+                    src={platform.image}
+                    alt={platform.name}
+                    className="h-12 w-full object-contain transition-transform group-hover:scale-105"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* PARTNERS & SPONSORS SECTION */}
       <section
@@ -625,7 +685,7 @@ export default function App() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@294.jakarta"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"
