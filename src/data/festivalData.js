@@ -88,15 +88,22 @@ export const ticketData = [
     id: 2,
     name: "PRESALE I",
     price: "Rp 80.000",
-    status: "AVAILABLE",
+    status: "ALMOST SOLD OUT",
     platforms: ticketPlatforms,
   },
   {
     id: 3,
     name: "PRESALE II",
-   price: "COMING SOON",
-    status: "COMING SOON",
-    platforms: ticketPlatforms,
+    price: "Rp 100.000",
+    status: "AVAILABLE",
+    platforms: ticketPlatforms.map((platform) =>
+      platform.name === "Goers"
+        ? {
+            ...platform,
+            link: "https://www.goersapp.com/events/schedules/294verse--294verse/this%20event",
+          }
+        : platform,
+    ),
   },
   {
     id: 4,

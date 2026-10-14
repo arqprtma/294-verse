@@ -426,7 +426,7 @@ export default function App() {
           {ticketData.map((ticket) => {
             const isSoldOut = ticket.status === "SOLD OUT";
             const isComingSoon = ticket.status === "COMING SOON";
-            const ticketLinks = [ticket.link1, ticket.link2].filter(Boolean);
+            const isAlmostSoldOut = ticket.status === "ALMOST SOLD OUT";
 
             return (
               <div
@@ -444,7 +444,9 @@ export default function App() {
                           ? "bg-red-500 text-white"
                           : isComingSoon
                             ? "bg-brand-cyan text-brand-dark"
-                            : "bg-brand-yellow text-brand-dark"
+                            : isAlmostSoldOut
+                              ? "bg-brand-pink text-white"
+                              : "bg-brand-yellow text-brand-dark"
                       }`}
                     >
                       {ticket.status}
@@ -453,6 +455,11 @@ export default function App() {
                   <h3 className="text-xl font-black uppercase text-brand-dark mb-2">
                     {ticket.name}
                   </h3>
+                  {isAlmostSoldOut && (
+                    <p className="mb-2 text-sm font-black uppercase text-brand-pink">
+                      Tiket mau habis!
+                    </p>
+                  )}
                   <div className="text-2xl font-black text-brand-pink mb-6">
                     {ticket.price}
                   </div>
