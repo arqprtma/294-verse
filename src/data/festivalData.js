@@ -17,6 +17,7 @@ export const lineupData = [
     { id: 4, name: "Westwew", image: "/lineup/westwew.jpeg", rotated: "rotate-1" },
     { id: 5, name: "GHXZY", image: "/lineup/ghxzy.jpeg", rotated: "-rotate-1" },
     { id: 6, name: "Badi303", image: "/lineup/badi303.jpg", rotated: "rotate-2" },
+    { id: 6, name: "Kelompok Penerbang Roket", image: "/lineup/kpr.png", rotated: "-rotate-2" },
 
 ];
 
