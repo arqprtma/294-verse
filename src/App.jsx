@@ -30,8 +30,6 @@ export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedTicket, setSelectedTicket] = useState(null);
-  const bundleTickets = ticketData.filter((ticket) => ticket.promoImage);
-  const regularTickets = ticketData.filter((ticket) => !ticket.promoImage);
 
   // Motion Parallax Hooks
   const { scrollY } = useScroll();
@@ -195,7 +193,7 @@ export default function App() {
               Dapatkan Tiket Sekarang!
             </a>
             <a
-              href="#bundling"
+              href="#tickets"
               className="mt-4 flex w-full max-w-xl items-center gap-3 border-2 border-brand-dark bg-brand-dark p-3 text-left text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1"
             >
               <span className="grid size-10 shrink-0 place-items-center bg-brand-cyan text-brand-dark">
@@ -443,46 +441,8 @@ export default function App() {
           </p>
         </div>
 
-        <div id="bundling" className="mb-14 scroll-mt-32">
-          <div className="mb-6 text-center">
-            <span className="inline-flex items-center gap-2 border-2 border-brand-dark bg-brand-cyan px-3 py-1 text-xs font-black uppercase text-brand-dark">
-              <Users size={16} /> Tiket Bundling
-            </span>
-            <h3 className="mt-3 text-2xl font-black uppercase text-brand-dark sm:text-3xl">
-              Datang bareng, makin seru
-            </h3>
-            <p className="mt-1 font-bold text-gray-700">
-              Pilih paket yang paling pas buat rombonganmu.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
-            {bundleTickets.map((ticket) => (
-              <article
-                key={ticket.id}
-                className="pop-card group overflow-hidden border-4 border-brand-dark bg-white"
-              >
-                <img
-                  src={ticket.promoImage}
-                  alt={`Promo ${ticket.name.toLowerCase()} seharga ${ticket.price}`}
-                  className="block aspect-[4/5] w-full object-cover"
-                />
-                <div className="p-4">
-                  <button
-                    onClick={() => setSelectedTicket(ticket)}
-                    className="flex w-full items-center justify-center gap-2 bg-brand-yellow px-4 py-3 text-sm font-black uppercase text-brand-dark transition-colors hover:bg-brand-pink hover:text-white"
-                  >
-                    <Ticket size={18} />
-                    Pilih {ticket.name.toLowerCase()}
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 gap-6 mx-auto max-w-5xl sm:grid-cols-2 md:grid-cols-4">
-          {regularTickets.map((ticket) => {
+          {ticketData.map((ticket) => {
             const isSoldOut = ticket.status === "SOLD OUT";
             const isComingSoon = ticket.status === "COMING SOON";
             const isAlmostSoldOut = ticket.status === "ALMOST SOLD OUT";

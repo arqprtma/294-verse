@@ -101,7 +101,7 @@ export const ticketData = [
     id: 2,
     name: "PRESALE I",
     price: "Rp 80.000",
-    status: "SOLD OUT",
+    status: "AVAILABLE",
     platforms: ticketPlatforms,
   },
   {
@@ -116,7 +116,6 @@ export const ticketData = [
     name: "BUNDLING 3 ORANG",
     price: "Rp 240.000",
     status: "AVAILABLE",
-    promoImage: "/bundling-2.jpeg",
     platforms: presaleTwoPlatforms,
   },
   {
@@ -124,7 +123,6 @@ export const ticketData = [
     name: "BUNDLING 5 ORANG",
     price: "Rp 375.000",
     status: "AVAILABLE",
-    promoImage: "/bundling-1.jpeg",
     platforms: presaleTwoPlatforms,
   },
   {
