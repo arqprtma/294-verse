@@ -91,12 +91,12 @@ export default function App() {
             >
               Galeri
             </a>
-            <a
+            {/* <a
               href="#tickets"
               className="hover:text-brand-pink transition-colors"
             >
               Tiket
-            </a>
+            </a> */}
             <a
               href="#partners"
               className="hover:text-brand-pink transition-colors"
