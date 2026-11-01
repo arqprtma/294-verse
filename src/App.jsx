@@ -12,6 +12,8 @@ import {
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
+  Users,
+  ArrowDownRight,
 } from "lucide-react";
 import {
   festivalInfo,
@@ -28,6 +30,8 @@ export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedTicket, setSelectedTicket] = useState(null);
+  const bundleTickets = ticketData.filter((ticket) => ticket.promoImage);
+  const regularTickets = ticketData.filter((ticket) => !ticket.promoImage);
 
   // Motion Parallax Hooks
   const { scrollY } = useScroll();
@@ -190,6 +194,23 @@ export default function App() {
             >
               Dapatkan Tiket Sekarang!
             </a>
+            <a
+              href="#bundling"
+              className="mt-4 flex w-full max-w-xl items-center gap-3 border-2 border-brand-dark bg-brand-dark p-3 text-left text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1"
+            >
+              <span className="grid size-10 shrink-0 place-items-center bg-brand-cyan text-brand-dark">
+                <Users size={22} />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-xs font-black uppercase text-brand-cyan">
+                  Ajak teman, lebih hemat
+                </span>
+                <span className="block text-xs font-bold leading-snug sm:text-sm">
+                  3 orang Rp 240.000 <span className="text-brand-cyan">/</span> 5 orang Rp 375.000
+                </span>
+              </span>
+              <ArrowDownRight className="shrink-0 text-brand-cyan" size={22} />
+            </a>
           </div>
 
           {/* KOLOM KANAN: BANNER POSTER HERO */}
@@ -272,9 +293,9 @@ export default function App() {
         className="py-20 px-4 max-w-7xl mx-auto w-full border-b-4 border-brand-dark"
       >
         <div className="text-center mb-14">
-          <div className="inline-block bg-brand-yellow text-brand-dark font-black px-4 py-1.5 border-2 border-brand-dark mb-3 uppercase text-xs md:text-sm tracking-wider -rotate-1">
+          {/* <div className="inline-block bg-brand-yellow text-brand-dark font-black px-4 py-1.5 border-2 border-brand-dark mb-3 uppercase text-xs md:text-sm tracking-wider -rotate-1">
             ⚡ PHASE 1 ANNOUNCEMENT
-          </div>
+          </div> */}
           <h2 className="text-5xl md:text-7xl font-black uppercase text-brand-dark mb-3 tracking-tight">
             LINE UP <span className="text-brand-pink pop-text">ARTIS</span>
           </h2>
@@ -422,8 +443,46 @@ export default function App() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {ticketData.map((ticket) => {
+        <div id="bundling" className="mb-14 scroll-mt-32">
+          <div className="mb-6 text-center">
+            <span className="inline-flex items-center gap-2 border-2 border-brand-dark bg-brand-cyan px-3 py-1 text-xs font-black uppercase text-brand-dark">
+              <Users size={16} /> Tiket Bundling
+            </span>
+            <h3 className="mt-3 text-2xl font-black uppercase text-brand-dark sm:text-3xl">
+              Datang bareng, makin seru
+            </h3>
+            <p className="mt-1 font-bold text-gray-700">
+              Pilih paket yang paling pas buat rombonganmu.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+            {bundleTickets.map((ticket) => (
+              <article
+                key={ticket.id}
+                className="pop-card group overflow-hidden border-4 border-brand-dark bg-white"
+              >
+                <img
+                  src={ticket.promoImage}
+                  alt={`Promo ${ticket.name.toLowerCase()} seharga ${ticket.price}`}
+                  className="block aspect-[4/5] w-full object-cover"
+                />
+                <div className="p-4">
+                  <button
+                    onClick={() => setSelectedTicket(ticket)}
+                    className="flex w-full items-center justify-center gap-2 bg-brand-yellow px-4 py-3 text-sm font-black uppercase text-brand-dark transition-colors hover:bg-brand-pink hover:text-white"
+                  >
+                    <Ticket size={18} />
+                    Pilih {ticket.name.toLowerCase()}
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 mx-auto max-w-5xl sm:grid-cols-2 md:grid-cols-4">
+          {regularTickets.map((ticket) => {
             const isSoldOut = ticket.status === "SOLD OUT";
             const isComingSoon = ticket.status === "COMING SOON";
             const isAlmostSoldOut = ticket.status === "ALMOST SOLD OUT";
