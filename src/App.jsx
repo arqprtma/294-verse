@@ -204,7 +204,12 @@ export default function App() {
                   Ajak teman, lebih hemat
                 </span>
                 <span className="block text-xs font-bold leading-snug sm:text-sm">
-                  3 orang Rp 240.000 <span className="text-brand-cyan">/</span> 5 orang Rp 375.000
+                  Bundling 3: Rp 75.000/orang
+                  <span className="text-brand-cyan"> / </span>
+                  Bundling 5: Rp 70.000/orang
+                </span>
+                <span className="block text-[10px] text-white/60">
+                  Belum termasuk pajak & biaya admin platform
                 </span>
               </span>
               <ArrowDownRight className="shrink-0 text-brand-cyan" size={22} />
@@ -482,6 +487,11 @@ export default function App() {
                   <div className="text-2xl font-black text-brand-pink mb-6">
                     {ticket.price}
                   </div>
+                  {ticket.priceNote && (
+                    <p className="-mt-5 mb-6 text-xs text-brand-dark/60">
+                      {ticket.priceNote}
+                    </p>
+                  )}
                 </div>
 
                 {isSoldOut ? (
