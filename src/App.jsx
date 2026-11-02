@@ -7,9 +7,7 @@ import {
   Ticket,
   Menu,
   X,
-  Trophy,
   Flame,
-  CheckCircle2,
   ChevronLeft,
   ChevronRight,
   Users,
@@ -247,11 +245,11 @@ export default function App() {
             CAMPAIGN EVENT
           </span>
           <h2 className="text-4xl md:text-6xl font-black uppercase text-brand-dark mt-2">
-            #TWOCOLLAB <span className="text-brand-pink">#ONEBIGMOVEMENT</span>
+            <span className="text-brand-pink">#ONEBIGMOVEMENT</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 gap-8 mb-12">
           <div className="pop-card bg-white p-8 border-4 border-brand-dark">
             <div className="flex items-center gap-3 mb-4">
               <Flame className="text-brand-pink" size={36} />
@@ -262,30 +260,6 @@ export default function App() {
             <p className="text-gray-800 leading-relaxed font-medium">
               {campaignData.movement}
             </p>
-          </div>
-
-          <div className="pop-card bg-brand-yellow p-8 border-4 border-brand-dark">
-            <div className="flex items-center gap-3 mb-4">
-              <Trophy className="text-brand-dark" size={36} />
-              <h3 className="text-2xl font-black uppercase">
-                Kolaborasi Eksklusif PB PORDI
-              </h3>
-            </div>
-            <p className="text-brand-dark leading-relaxed font-medium mb-4">
-              {campaignData.pordi}
-            </p>
-            <div className="space-y-2 font-bold text-sm">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={18} className="text-brand-pink" />
-                <span>Nafas baru membawa domino ke Generasi Z dan Alpha</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={18} className="text-brand-pink" />
-                <span>
-                  Platform kolaborasi, kompetisi, dan komunitas dalam satu wadah
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -679,7 +653,7 @@ export default function App() {
             </a>
             <p className="text-sm text-gray-400 font-body">
               Festival musik gabungan Hip-Hop dan Band terbesar persembahan 294
-              Jakarta x PB PORDI (Perkumpulan Olahraga Domino Indonesia).
+              Jakarta.
             </p>
           </div>
 

@@ -6,8 +6,7 @@ export const festivalInfo = {
 };
 
 export const campaignData = {
-  movement: "Lahir dari kerasnya solidaritas tongkrongan jalanan dan kultur gangster JEGADBWPM yang telah berdiri kokoh selama lebih dari satu dekade, 294 Jakarta kini bertransformasi menjadi kolektif kreatif yang progresif. Kami membuktikan bahwa anak-anak muda dari jalanan mampu mandiri secara ekonomi dan membuka lapangan pekerjaan bagi kawan-kawan komunitas.",
-  pordi: "Bekerja sama dengan PB PORDI (Perkumpulan Olahraga Domino Indonesia) di bawah naungan KORMI, 294 Verse menghadirkan pengalaman festival yang eksklusif dan sarat kebersamaan melalui kompetisi domino yang intimate untuk meruntuhkan sekat antara musisi dan penggemar."
+  movement: "Lahir dari kerasnya solidaritas tongkrongan jalanan dan kultur gangster JEGADBWPM yang telah berdiri kokoh selama lebih dari satu dekade, 294 Jakarta kini bertransformasi menjadi kolektif kreatif yang progresif. Kami membuktikan bahwa anak-anak muda dari jalanan mampu mandiri secara ekonomi dan membuka lapangan pekerjaan bagi kawan-kawan komunitas."
 };
 
 export const lineupData = [
