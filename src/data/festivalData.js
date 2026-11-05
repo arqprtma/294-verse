@@ -17,7 +17,12 @@ export const lineupData = [
     { id: 5, name: "GHXZY", image: "/lineup/ghxzy.jpeg", rotated: "-rotate-1" },
     { id: 6, name: "Badi303", image: "/lineup/badi303.jpg", rotated: "rotate-2" },
     { id: 6, name: "Kelompok Penerbang Roket", image: "/lineup/kpr.png", rotated: "-rotate-2" },
-
+    { id: 7, name: "Ageng Carlitos", image: "/lineup/ageng-carlitos.webp", rotated: "rotate-1" },
+    { id: 8, name: "Mario Zwinkle", image: "/lineup/Mario.webp", rotated: "rotate-2" },
+    { id: 9, name: "Ben Utomo", image: "/lineup/ben-utomo.webp", rotated: "-rotate-2" },
+    { id: 10, name: "TBAG", image: "/lineup/TBAG.webp", rotated: "rotate-1" },
+    { id: 11, name: "NORTH SIDE KINGZ", image: "/lineup/NORTH-SIDEKINGZ.webp", rotated: "rotate-1" },
+    { id: 12, name: "YABOY JESON", image: "/lineup/YABOY.webp", rotated: "rotate-1" },
 ];
 
 // Portofolio slider (3 gambar)
